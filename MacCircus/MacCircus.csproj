@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>12.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{93A9626E-D155-4563-952E-AE495D5762BB}</ProjectGuid>
+    <ProjectTypeGuids>{948B3504-5B70-4649-8FE4-BDE1FB46EC69};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MacCircus</RootNamespace>
+    <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+    <AssemblyName>MacCircus</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;OSX</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <UseSGen>false</UseSGen>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <ConsolePause>false</ConsolePause>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CreatePackage>false</CreatePackage>
+    <CodeSigningKey>Mac Developer</CodeSigningKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <UseSGen>false</UseSGen>
+    <LinkMode>Full</LinkMode>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <ConsolePause>false</ConsolePause>
+    <EnableCodeSigning>true</EnableCodeSigning>
+    <CreatePackage>true</CreatePackage>
+    <CodeSigningKey>Developer ID Application</CodeSigningKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\AppStore</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
+    <LinkMode>Full</LinkMode>
+    <UseSGen>false</UseSGen>
+    <EnableCodeSigning>true</EnableCodeSigning>
+    <ConsolePause>false</ConsolePause>
+    <EnablePackageSigning>true</EnablePackageSigning>
+    <CreatePackage>true</CreatePackage>
+    <CodeSigningKey>3rd Party Mac Developer Application</CodeSigningKey>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="MonoGame.Framework">
+      <HintPath>..\..\..\..\..\..\GitHub\MonoGame\MonoGame.Framework\bin\MacOS\Debug\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="XamMac, Version=0.0.0.0, Culture=neutral">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\WindowsCircus\AnimatedSprite.cs">
+      <Link>AnimatedSprite.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsCircus\Balloon.cs">
+      <Link>Balloon.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsCircus\Game1.cs">
+      <Link>Game1.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsCircus\PrimitiveBatch.cs">
+      <Link>PrimitiveBatch.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsCircus\Program.cs">
+      <Link>Program.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Mono\MonoMac\v0.0\Mono.MonoMac.targets" />
+  <ItemGroup>
+    <Folder Include="Content\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\WindowsCircus\bin\x86\Debug\Content\Background.xnb">
+      <Link>Content\Background.xnb</Link>
+    </Content>
+    <Content Include="..\WindowsCircus\bin\x86\Debug\Content\Caliope.wma">
+      <Link>Content\Caliope.wma</Link>
+    </Content>
+    <Content Include="..\WindowsCircus\bin\x86\Debug\Content\Caliope.xnb">
+      <Link>Content\Caliope.xnb</Link>
+    </Content>
+    <Content Include="..\WindowsCircus\bin\x86\Debug\Content\Trampoline.xnb">
+      <Link>Content\Trampoline.xnb</Link>
+    </Content>
+    <Content Include="..\WindowsCircus\bin\x86\Debug\Content\balloon.xnb">
+      <Link>Content\balloon.xnb</Link>
+    </Content>
+    <Content Include="..\WindowsCircus\bin\x86\Debug\Content\bounce.xnb">
+      <Link>Content\bounce.xnb</Link>
+    </Content>
+    <Content Include="..\WindowsCircus\bin\x86\Debug\Content\clownSpriteSheet.xnb">
+      <Link>Content\clownSpriteSheet.xnb</Link>
+    </Content>
+    <Content Include="..\WindowsCircus\bin\x86\Debug\Content\pop.xnb">
+      <Link>Content\pop.xnb</Link>
+    </Content>
+    <Content Include="..\WindowsCircus\bin\x86\Debug\Content\scoreFont.xnb">
+      <Link>Content\scoreFont.xnb</Link>
+    </Content>
+  </ItemGroup>
+</Project>
